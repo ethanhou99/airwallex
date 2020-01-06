@@ -1,0 +1,31 @@
+<assembly>
+	<id>assembly</id>
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+            <directory>${project.basedir}/assembly/scripts</directory>
+			<outputDirectory>.</outputDirectory>
+			<fileMode>0755</fileMode>
+            <filtered>true</filtered>
+		</fileSet>
+		<!--<fileSet>
+			<directory>${project.basedir}/src/main/resources</directory>
+			<outputDirectory>config</outputDirectory>
+			<fileMode>0644</fileMode>
+            <filtered>true</filtered>
+			<includes>
+				<include>*.*</include>
+			</includes>
+		</fileSet>-->
+	</fileSets>
+	<files>
+		<file>
+			<!--打好的jar包名称和放置目录-->
+			<source>${project.build.directory}/${project.build.finalName}.jar</source>
+			<outputDirectory>lib</outputDirectory>
+		</file>
+	</files>
+</assembly>
